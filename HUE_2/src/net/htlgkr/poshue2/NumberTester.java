@@ -38,7 +38,7 @@ public class NumberTester {
             case 1:
                 System.out.println(oddTester.testNumber(number) ? "EVEN" : "ODD"); return;
             case 2:
-                System.out.println(primeTester.testNumber(number) ? "PRIME" : "NOT PRIME"); return;
+                System.out.println(primeTester.testNumber(number) ? "PRIME" : "NO PRIME"); return;
             case 3:
                 System.out.println(palindromeTester.testNumber(number) ? "PALINDROME" : "NOT PALINDROME");
         }
