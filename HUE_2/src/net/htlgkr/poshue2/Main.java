@@ -18,15 +18,19 @@ public class Main {
 
     }
 
+    private static boolean isPrime(int number) {
+        EratosthenesPrimeSieve primeSieve = new EratosthenesPrimeSieve(1000);
+
+        return primeSieve.isPrime(number);
+    }
+
     private static boolean isPalindrom(int number) {
         List<Integer> digits = getDigits(number);
-
-        for (int i = 0; i < ((double) digits.size()) / 2; i++) {
-            if (!digits.get(i).equals(digits.get(digits.size() - 1 - i))) {
+        for (int i = 0; i < (digits.size() / 2); i++) {
+            if (!digits.get(i).equals(digits.get(digits.size() - i - 1))) {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -38,19 +42,6 @@ public class Main {
         }
 
         return digits;
-    }
-
-    private static boolean isPrime(int n) {
-        for (int i = 0; i < 1000; i++) {
-            for (int j = 0; j < i; j++) {
-                if (i % j == 0) {
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 }
 

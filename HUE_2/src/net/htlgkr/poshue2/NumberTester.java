@@ -1,8 +1,7 @@
 package net.htlgkr.poshue2;
 
 import java.io.*;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class NumberTester {
 
@@ -11,9 +10,11 @@ public class NumberTester {
     private NumberTest primeTester;
     private NumberTest palindromeTester;
     private String fileName;
+    private List<Assignment2Model> lines;
 
     public NumberTester(String fileName) {
         this.fileName = fileName;
+        lines = readInFile();
     }
 
     public void setOddEvenTester(NumberTest oddTester) {
@@ -29,41 +30,37 @@ public class NumberTester {
     }
 
     public void testFile() {
-        Map<Integer, Integer> file = readInFile();
-
-        // file.forEach((key, value) -> useNumberTester(key, value));
-
-        file.forEach(this::useNumberTester);
+        lines.forEach(line -> useNumberTester(line.getType(), line.getNumber()));
     }
 
-    private void useNumberTester(int key, int value) {
-        switch (key){
+    private void useNumberTester(int type, int number) {
+        switch (type){
             case 1:
-                System.out.println(oddTester.testNumber(value) ? "EVEN" : "ODD"); return;
+                System.out.println(oddTester.testNumber(number) ? "EVEN" : "ODD"); return;
             case 2:
-                System.out.println(primeTester.testNumber(value) ? "PRIME" : "NOT PRIME"); return;
+                System.out.println(primeTester.testNumber(number) ? "PRIME" : "NOT PRIME"); return;
             case 3:
-                System.out.println(palindromeTester.testNumber(value) ? "PALINDROME" : "NOT PALINDROME");
+                System.out.println(palindromeTester.testNumber(number) ? "PALINDROME" : "NOT PALINDROME");
         }
     }
 
-    private Map<Integer, Integer> readInFile() {
-        Map<Integer, Integer> file = new LinkedHashMap<>();
+    private List<Assignment2Model> readInFile() {
+        List<Assignment2Model> lines = new ArrayList<>();
 
         try(BufferedReader br = new BufferedReader(new FileReader(new File(fileName)))){
             String line = br.readLine();
             line = br.readLine();
             while(line != null){
                 String[] parts = line.split(" ");
-                file.put(Integer.parseInt(parts[0]), Integer.valueOf(parts[1]));
+                lines.add(new Assignment2Model(Integer.parseInt(parts[0]), Integer.parseInt(parts[1])));
                 line = br.readLine();
             }
 
         } catch (IOException e) {
-            System.out.println("Error in NumberTester.readInFile - Message: " + e.getMessage());
+            System.out.println("Error in NumberTester.readInFile - fileName - Message: " + e.getMessage());
         }
 
-        return file;
+        return lines;
     }
 
 }
