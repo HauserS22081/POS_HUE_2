@@ -2,7 +2,10 @@ package net.htlgkr.poshue2;
 
 public class NumberTester {
 
-    //...
+
+    private NumberTest oddTester;
+    private NumberTest primeTester;
+    private NumberTest palindromeTester;
 
     public NumberTester(String fileName) {
 
@@ -21,6 +24,6 @@ public class NumberTester {
     }
 
     public void testFile() {
-        
+
     }
 }
