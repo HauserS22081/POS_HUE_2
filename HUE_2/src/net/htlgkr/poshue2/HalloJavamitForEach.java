@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HalloJavamitForEach {
 
-    public static void main(String[] args) {
+    public static void halloJavaMitForEach() {
         List<String> stringList = new ArrayList<String>(List.of("a", "b", "c", "d", "e", "f"));
 
         System.out.println("Mit for each Schleife: ");

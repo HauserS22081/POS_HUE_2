@@ -1,8 +1,6 @@
 package net.htlgkr.poshue2;
 
-
 import java.io.*;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -45,7 +43,7 @@ public class NumberTester {
             case 2:
                 System.out.println(primeTester.testNumber(value) ? "PRIME" : "NOT PRIME"); return;
             case 3:
-                System.out.println(palindromeTester.testNumber(value) ? "PALINDROME" : "NOT PALINDROME"); 
+                System.out.println(palindromeTester.testNumber(value) ? "PALINDROME" : "NOT PALINDROME");
         }
     }
 
@@ -67,11 +65,5 @@ public class NumberTester {
 
         return file;
     }
-
-//    private void declarePrimeTester() {
-//        NumberTest oddTester = number -> (number % 2) == 0;
-//
-//        NumberTest primeTester = number -> IntMath.isPrime(number);
-//    }
 
 }
