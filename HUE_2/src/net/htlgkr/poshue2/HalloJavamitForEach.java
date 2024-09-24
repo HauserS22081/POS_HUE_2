@@ -8,10 +8,12 @@ public class HalloJavamitForEach {
     public static void main(String[] args) {
         List<String> stringList = new ArrayList<String>(List.of("a", "b", "c", "d", "e", "f"));
 
+        System.out.println("Mit for each Schleife: ");
         for (String element : stringList) {
             System.out.println(element);
         }
 
+        System.out.println("\nMit lambda Ausdruck:");
         stringList.forEach(System.out::println);
     }
 }
