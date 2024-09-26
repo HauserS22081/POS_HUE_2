@@ -27,7 +27,8 @@ public class Main {
     }
 
     private static void interactWithUser(AbstractCalculator[] calculator) {
-        
+        System.out.println("Choose calculator:");
+        System.out.println("1 - ");
     }
 
     private static AbstractCalculator[] createCalculator() {
