@@ -2,19 +2,7 @@ package net.htlgkr.poshue2;
 
 public class RelationalCalculator extends AbstractCalculator{
     public RelationalCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
-//        super(
-//                add,
-//                subtract,
-//                multiply,
-//                divide
-//        );
-
-        super(
-                (a, b) -> (new Number(a.getA() + b.getA(), a.getB() + b.getB())),
-                subtract,
-                multiply,
-                divide
-        );
+        super(add, subtract, multiply, divide);
     }
 
     @Override

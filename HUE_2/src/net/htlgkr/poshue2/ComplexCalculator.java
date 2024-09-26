@@ -1,6 +1,10 @@
 package net.htlgkr.poshue2;
 
 public class ComplexCalculator extends AbstractCalculator{
+    public ComplexCalculator(CalculationOperation add, CalculationOperation subtract, CalculationOperation multiply, CalculationOperation divide) {
+        super(add, subtract, multiply, divide);
+    }
+
     @Override
     public Number add(Number a, Number b) {
         return null;
