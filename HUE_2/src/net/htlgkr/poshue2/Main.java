@@ -122,7 +122,7 @@ public class Main {
     private static AbstractCalculator[] createCalculator() {
         RelationalCalculator relationalC = new RelationalCalculator(
                 (a, b) -> new Number(a.getA() + b.getA(), a.getB() + b.getB()),
-                (a, b) -> new Number(a.getA() - b.getB(), a.getB() - b.getB()),
+                (a, b) -> new Number(a.getA() - b.getA(), a.getB() - b.getB()),
                 (a, b) -> new Number(a.getA() * b.getA(), a.getB() * b.getB()),
                 (a, b) -> new Number(a.getA() * b.getB(), a.getB() * b.getA())
         );
@@ -139,7 +139,7 @@ public class Main {
                 (a, b) -> new Number(a.getA() - b.getA(), a.getB() - b.getB()),
                 (a, b) -> new Number(a.getA() * b.getA() - a.getB() * b.getB(), a.getA() * b.getB() + a.getB() * b.getA()),
                 (a, b) -> new Number(
-                        (a.getA() * b.getA() + b.getB() * b.getB()) / (Math.pow(b.getA(), 2) + Math.pow(b.getB(), 2)),
+                        (a.getA() * b.getA() + a.getB() * b.getB()) / (Math.pow(b.getA(), 2) + Math.pow(b.getB(), 2)),
                         (a.getB() * b.getA() - a.getA() * b.getB()) / (Math.pow(b.getA(), 2) + Math.pow(b.getB(), 2)))
         );
 
